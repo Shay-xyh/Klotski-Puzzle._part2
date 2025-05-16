@@ -26,9 +26,9 @@ public class GameFrame extends JFrame {
         this.add(gamePanel);
         this.controller = new GameController(gamePanel, mapModel);
 
-        this.restartBtn = FrameUtil.createButton(this, "Restart", new Point(gamePanel.get_panel_Width() + 80, 120), 80, 50);
-        this.loadBtn = FrameUtil.createButton(this, "Load", new Point(gamePanel.get_panel_Width() + 80, 210), 80, 50);
-        this.stepLabel = FrameUtil.createJLabel(this, "Start", new Font("serif", Font.ITALIC, 22), new Point(gamePanel.get_panel_Width() + 80, 70), 180, 50);
+        this.restartBtn = FrameUtil.createButton(this, "Restart", new Point(gamePanel.getPanelWidth() + 80, 120), 80, 50);
+        this.loadBtn = FrameUtil.createButton(this, "Load", new Point(gamePanel.getPanelWidth() + 80, 210), 80, 50);
+        this.stepLabel = FrameUtil.createJLabel(this, "Start", new Font("serif", Font.ITALIC, 22), new Point(gamePanel.getPanelWidth() + 80, 70), 180, 50);
         gamePanel.setStepLabel(stepLabel);
 
         this.restartBtn.addActionListener(e -> {
@@ -44,6 +44,8 @@ public class GameFrame extends JFrame {
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(Color.LIGHT_GRAY);
+
+
     }
     public GamePanel getGamePanel() {
         return gamePanel;  // 返回 GamePanel 给 GameController
